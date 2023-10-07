@@ -5,6 +5,17 @@
 
 }
 
+header {
+    width: 100%; 
+    margin: 15px auto 30px auto;  
+    text-align: center;
+    padding: 20px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.247);
+}
+header > img {
+    width: 50px;
+}
+
 
 section#tarefain {
     width: 100%;
@@ -15,7 +26,7 @@ section#tarefain {
 nav#menu {
     width: 100%;
     height: 50px;
-    margin: 50px auto;
+    margin: 20px auto 50px auto;
 }
 article {
     width: 100%;
@@ -30,6 +41,7 @@ input#tarefa {
     transform: translate(-50%, 0px);
     font-size: 1.3em;
     text-align: center;
+    text-wrap: wrap;
     margin: 5px auto;
     border: none;
     border-bottom: 2px solid rgb(176, 194, 224);
@@ -54,6 +66,7 @@ p.postit {
     font-size: 1.2em;
     width: 350px;
     padding: 20px;
+    text-wrap: balance;
     background-color: rgb(254, 254, 254);
     margin: 10px auto 10px auto;
     border-radius: 20px;
