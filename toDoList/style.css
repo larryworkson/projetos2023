@@ -7,8 +7,7 @@
 }
 
 header {
-    width: 100%; 
-    margin: 15px auto 30px auto;  
+    margin: 0px auto 30px auto;  
     text-align: center;
     padding: 20px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.247);
@@ -34,15 +33,17 @@ article {
 }
 
 input#tarefa {
+    background-color: #ffffff00;
     position: absolute;
     bottom: 10px;
     left: 50%;
     width: 70%;
     transform: translate(-50%, 0px);
     font-size: 1.3em;
+    padding: 20px;
     text-align: center;
     text-wrap: wrap;
-    margin: 5px auto;
+    margin: 0px auto;
     border: none;
     border-bottom: 2px solid rgb(176, 194, 224);
 }
@@ -57,14 +58,13 @@ button#btnadd {
     color: #ffffff;
     border-radius: 5px;
     border: none;
-    width: 40px;
-    padding: 4px;
+    width: 250px;
+    padding: 10px;
     margin-bottom: 100px;
 
 }
 p.postit {
-    font-size: 1.2em;
-    width: 350px;
+    width: 70%;
     padding: 20px;
     text-wrap: balance;
     background-color: rgb(254, 254, 254);
@@ -75,6 +75,7 @@ p.postit {
 }
 input.novastarefas {
     display: inline-block;
+    font-size: 1.3em;
     width: 85%;
     border: none;
     background-color: #ffffff00;
@@ -82,13 +83,13 @@ input.novastarefas {
     color:rgb(124, 124, 124);
 }
 button#del {
-    font-size: 1em;
+    font-size: 1.3em;
     background-color: rgb(214, 32, 71);
     color: #ffffff;
     border-radius: 5px;
     border: none;
-    width: 30px;
-    padding: 4px;
+    width: 50px;
+    padding: 10px;
 }
 
 

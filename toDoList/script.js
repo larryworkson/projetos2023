@@ -1,7 +1,8 @@
 "use strict"
 var lista = []
-function salvar() {
-    let descTarefas = {task: ''}
+
+function salvar() {  
+    var descTarefas = {task: ''}
     let tarefa = document.querySelector('input#tarefa').value
     document.querySelector('input#tarefa').value = ''
     descTarefas.task = tarefa
@@ -20,9 +21,17 @@ function mostrar() {
     div.innerHTML = ''
     for (let item in lista) {
         let linha = document.createElement('article')
-        linha.innerHTML = `<p class="postit"><input class="novastarefas" type="text" id="tarefa${item}" value="${lista[item].task}"> <button id="del" onclick="del(${item})">X</button></p>`
+        linha.innerHTML = `<p class="postit"><input class="novastarefas" type="text" id="tarefa${item}" value="${lista[item].task}"><button onclick="salvar(${item})">S</button> <button id="del" onclick="del(${item})">X</button></p>`
         div.appendChild(linha)
+       
     }
 }
 
-/* precisa arrumar um jeito de salvar as edições realizadas na tarefa */
+//verifica se já existe algum item na lista para ser editado
+if (lista.length > 0) {
+    function salvar(id) {
+        let novoconteudo = document.getElementById(`tarefa${id}`)
+        lista[id].task = novoconteudo
+    }
+}
+console.log(lista)
