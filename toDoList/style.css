@@ -3,6 +3,7 @@
     margin: 0px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
+
 }
 
 header {
@@ -19,7 +20,6 @@ header > img {
 
 section#tarefain {
     width: 100%;
-    height: 100vh;
     position: relative;
 }
 
@@ -35,7 +35,7 @@ article {
 
 input#tarefa {
     position: absolute;
-    top: 10px;
+    bottom: 10px;
     left: 50%;
     width: 70%;
     transform: translate(-50%, 0px);
@@ -47,8 +47,8 @@ input#tarefa {
     border-bottom: 2px solid rgb(176, 194, 224);
 }
 button#btnadd {
-    position: absolute;
-    top: 50px;
+    position: relative;
+    bottom: -50px;
     left: 50%;
     transform: translate(-50%, 0px);
     font-size: 1.6em;
