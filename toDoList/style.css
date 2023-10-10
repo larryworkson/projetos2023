@@ -5,6 +5,10 @@
 
 
 }
+body {
+    background-color: rgb(255, 255, 255);
+    color: rgb(65, 65, 65);
+}
 
 header {
     margin: 0px auto 30px auto;  
@@ -101,4 +105,10 @@ button#sal {
     padding: 10px;
 }
 
-
+header > section {
+    width: 50px;
+    margin: 10px auto;
+}
+section > img {
+    width: 35px;
+}
