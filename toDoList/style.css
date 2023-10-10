@@ -74,17 +74,26 @@ p.postit {
     
 }
 input.novastarefas {
-    display: inline-block;
     font-size: 1.3em;
-    width: 85%;
     border: none;
     background-color: #ffffff00;
     margin: 10px auto;
     color:rgb(124, 124, 124);
 }
+
 button#del {
     font-size: 1.3em;
     background-color: rgb(214, 32, 71);
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    width: 50px;
+    padding: 10px;
+}
+
+button#sal {
+    font-size: 1.3em;
+    background-color: rgb(12, 163, 90);
     color: #ffffff;
     border-radius: 5px;
     border: none;

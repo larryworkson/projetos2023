@@ -21,17 +21,25 @@ function mostrar() {
     div.innerHTML = ''
     for (let item in lista) {
         let linha = document.createElement('article')
-        linha.innerHTML = `<p class="postit"><input class="novastarefas" type="text" id="tarefa${item}" value="${lista[item].task}"><button onclick="salvar(${item})">S</button> <button id="del" onclick="del(${item})">X</button></p>`
+        linha.innerHTML = `
+        <p class="postit">
+            <input class="novastarefas" type="text" id="tarefa${item}" value="${lista[item].task}">
+            <button id="sal" onclick="editar(${item})">✓</button>
+            <button id="del" onclick="del(${item})">X</button>
+        </p>`
         div.appendChild(linha)
        
     }
 }
 
 //verifica se já existe algum item na lista para ser editado
-if (lista.length > 0) {
-    function salvar(id) {
-        let novoconteudo = document.getElementById(`tarefa${id}`)
-        lista[id].task = novoconteudo
-    }
+
+function editar(id) {
+    let novoconteudo = document.getElementById(`tarefa${id}`).value
+    lista[id].task = novoconteudo
+
+    mostrar()
 }
-console.log(lista)
+for (let a of lista) {
+    console.log(a)
+}
