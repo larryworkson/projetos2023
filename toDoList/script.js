@@ -17,18 +17,19 @@ function del(id) {
 }
 
 
+
 function mostrar() {
     let div = document.getElementById('listagem')
     div.innerHTML = ''
     for (let item in lista) {
         let linha = document.createElement('article')
         linha.innerHTML = `
-        <p class="postit">
-            <input class="novastarefas" type="text" id="tarefa${item}" value="${lista[item].task}">
+        <section class="postit"> 
+            <input class="novastarefas" type="text" id="tarefa${item}" value="${lista[item].task}">                                  
             <button id="sal" onclick="editar(${item})"><img src="img/save.svg"></button>
             <button id="check" onclick="check(${item})"><img src="img/check.svg"></button>
             <button id="del" onclick="del(${item})"><img src="img/x.svg"></button>
-        </p>`
+        </section>`
         div.appendChild(linha)
        
     }
@@ -46,7 +47,7 @@ function editar(id) {
 }
 
 /* MARCANDO A TAREFA CONCLUIDA */
-var riscado = false
+var riscado = true
 function check(valor) {
     let selecTarefa = document.getElementById(`tarefa${valor}`)
     if (riscado) {
@@ -67,15 +68,17 @@ var mudarestilo = document.getElementById('mudarestilo')
 var postit = document.getElementsByClassName('postit')
 var txtpostit = document.getElementsByClassName('novastarefas')
 var txtinputaarefa = document.querySelector('input#tarefa')
+var header = document.getElementById('cabeca')
 
 function darkmode(){   
-    estilo = false 
-    document.body.style.backgroundColor = 'rgb(65, 65, 65)'
+    estilo = false
+    header.style.backgroundColor = 'rgb(30, 30, 30)'
+    document.body.style.backgroundColor = 'rgb(25, 25, 25)'
     document.body.style.color = 'rgb(255, 255, 255)'
     txtinputaarefa.style.color = 'rgb(220, 220, 220)'
     mudarestilo.innerHTML = '<img onclick="lightmode()" src="img/sun.svg">'
     for (let v = 0; v < postit.length ; v++) {
-        postit[v].style.backgroundColor = 'rgb(75, 75, 75)'
+        postit[v].style.backgroundColor = 'rgb(35, 35, 35)'
     }
     for (let c = 0 ; c < txtpostit.length ; c++){
         txtpostit[c].style.color = 'rgb(220, 220, 220)'

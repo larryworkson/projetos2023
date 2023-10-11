@@ -16,7 +16,7 @@ header {
     position: relative;
     margin: 0px auto 30px auto;
     padding: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.247);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 header > h1 {
@@ -75,23 +75,23 @@ button#btnadd {
     margin-bottom: 100px;
 
 }
-p.postit {
+section.postit {
     width: 70%;
     padding: 20px;
-    text-wrap: balance;
     background-color: rgb(254, 254, 254);
     margin: 10px auto 10px auto;
     border-radius: 20px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.187);
     
 }
-input.novastarefas {
+.novastarefas {
     font-size: 1.3em;
     border: none;
     background-color: #ffffff00;
     margin: 10px auto;
     color:rgb(124, 124, 124);
 }
+
 
 button#del {
     font-size: 1.3em;
