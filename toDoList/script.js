@@ -25,9 +25,9 @@ function mostrar() {
         linha.innerHTML = `
         <p class="postit">
             <input class="novastarefas" type="text" id="tarefa${item}" value="${lista[item].task}">
-            <button id="sal" onclick="editar(${item})">💾</button>
-            <button id="check" onclick="check(${item})">☑</button>
-            <button id="del" onclick="del(${item})">X</button>
+            <button id="sal" onclick="editar(${item})"><img src="img/save.svg"></button>
+            <button id="check" onclick="check(${item})"><img src="img/check.svg"></button>
+            <button id="del" onclick="del(${item})"><img src="img/x.svg"></button>
         </p>`
         div.appendChild(linha)
        
@@ -73,7 +73,7 @@ function darkmode(){
     document.body.style.backgroundColor = 'rgb(65, 65, 65)'
     document.body.style.color = 'rgb(255, 255, 255)'
     txtinputaarefa.style.color = 'rgb(220, 220, 220)'
-    mudarestilo.innerHTML = '<img onclick="lightmode()" src="https://static.vecteezy.com/system/resources/previews/009/266/750/original/sun-icon-design-free-png.png">'
+    mudarestilo.innerHTML = '<img onclick="lightmode()" src="img/sun.svg">'
     for (let v = 0; v < postit.length ; v++) {
         postit[v].style.backgroundColor = 'rgb(75, 75, 75)'
     }
@@ -87,7 +87,7 @@ function lightmode() {
     document.body.style.backgroundColor = 'rgb(255, 255, 255)'
     document.body.style.color = 'rgb(65, 65, 65)'
     txtinputaarefa.style.color = 'rgb(65,65,65)'
-    mudarestilo.innerHTML = '<img onclick="darkmode()" src="https://cdn-icons-png.flaticon.com/512/4445/4445942.png">'
+    mudarestilo.innerHTML = '<img onclick="darkmode()" src="img/moon.svg">'
     for (let v = 0; v < postit.length ; v++) {
         postit[v].style.backgroundColor = 'rgb(254, 254, 254)'
     }
