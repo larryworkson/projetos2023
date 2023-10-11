@@ -16,6 +16,7 @@ function del(id) {
     mostrar()
 }
 
+
 function mostrar() {
     let div = document.getElementById('listagem')
     div.innerHTML = ''
@@ -24,14 +25,19 @@ function mostrar() {
         linha.innerHTML = `
         <p class="postit">
             <input class="novastarefas" type="text" id="tarefa${item}" value="${lista[item].task}">
-            <button id="sal" onclick="editar(${item})">✓</button>
+            <button id="sal" onclick="editar(${item})">💾</button>
+            <button id="check" onclick="check(${item})">☑</button>
             <button id="del" onclick="del(${item})">X</button>
         </p>`
         div.appendChild(linha)
        
     }
+    if (estilo) {
+        lightmode()
+    } else {
+        darkmode()
+    }
 }
-
 
 function editar(id) {
     let novoconteudo = document.getElementById(`tarefa${id}`).value
@@ -39,12 +45,31 @@ function editar(id) {
     mostrar()
 }
 
+/* MARCANDO A TAREFA CONCLUIDA */
+var riscado = false
+function check(valor) {
+    let selecTarefa = document.getElementById(`tarefa${valor}`)
+    if (riscado) {
+        selecTarefa.style.textDecoration = 'line-through'
+        riscado = false
 
-function darkmode(){
-    let mudarestilo = document.getElementById('mudarestilo')
-    let postit = document.getElementsByClassName('postit')
-    let txtpostit = document.getElementsByClassName('novastarefas')
-    let txtinputaarefa = document.querySelector('input#tarefa')
+    } else {    
+        selecTarefa.style.textDecoration = 'none'
+        riscado = true
+    }
+}
+
+
+
+/* CONFIGURAÇÃO DARKMODE */
+var estilo = true
+var mudarestilo = document.getElementById('mudarestilo')
+var postit = document.getElementsByClassName('postit')
+var txtpostit = document.getElementsByClassName('novastarefas')
+var txtinputaarefa = document.querySelector('input#tarefa')
+
+function darkmode(){   
+    estilo = false 
     document.body.style.backgroundColor = 'rgb(65, 65, 65)'
     document.body.style.color = 'rgb(255, 255, 255)'
     txtinputaarefa.style.color = 'rgb(220, 220, 220)'
@@ -58,8 +83,17 @@ function darkmode(){
     
 }
 function lightmode() {
-    let mudarestilo = document.getElementById('mudarestilo')
+    estilo = true
     document.body.style.backgroundColor = 'rgb(255, 255, 255)'
     document.body.style.color = 'rgb(65, 65, 65)'
+    txtinputaarefa.style.color = 'rgb(65,65,65)'
     mudarestilo.innerHTML = '<img onclick="darkmode()" src="https://cdn-icons-png.flaticon.com/512/4445/4445942.png">'
+    for (let v = 0; v < postit.length ; v++) {
+        postit[v].style.backgroundColor = 'rgb(254, 254, 254)'
+    }
+    for (let c = 0 ; c < txtpostit.length ; c++){
+        txtpostit[c].style.color = 'rgb(124, 124, 124)'
+    }
 }
+
+
