@@ -24,10 +24,10 @@
         for (let item in lista) {
             let linha = document.createElement('article')
             linha.innerHTML = `
-            <section class="postit"> 
-                <input class="novastarefas" type="text" id="tarefa${item}" oninput="showSave(${item})" value="${lista[item].task}">                                  
+            <section class="postit" id="postit${item}"> 
+                <input class="novastarefas" type="text" id="tarefa${item}" onmousedown="showSave(${item})" value="${lista[item].task}">                                  
                 <button id="sal${item}" class="sal" onclick="editar(${item})"><img src="img/save.svg"></button>
-                <button id="check" class="check" onclick="check(${item})"><img src="img/check.svg"></button>
+                <button id="check" class="check" onclick="check(${item})"><img id="imgcheck${item}" src="img/check-blank.svg"></button>
                 <button id="del" onclick="del(${item})"><img src="img/x.svg"></button>
             </section>`
             div.appendChild(linha)
@@ -51,12 +51,28 @@
     var riscado = true
     function check(valor) {
         let selecTarefa = document.getElementById(`tarefa${valor}`)
+        let imgcheck = document.getElementById(`imgcheck${valor}`)
+        let postitCheck = document.getElementById(`postit${valor}`)
         if (riscado) {
             selecTarefa.style.textDecoration = 'line-through'
+            imgcheck.src = 'img/check.svg'
+            //chenado se darkmode está ativo
+            if (estilo) {
+                postitCheck.style.backgroundColor = 'rgb(234, 255, 234)'
+            } else {
+                postitCheck.style.backgroundColor = 'rgb(25, 65, 25)'
+            }
             riscado = false
 
         } else {    
             selecTarefa.style.textDecoration = 'none'
+            imgcheck.src = 'img/check-blank.svg'
+            //chenado se darkmode está ativo
+            if (estilo) {
+                postitCheck.style.backgroundColor = 'rgb(254, 254, 254)'
+            } else {
+                postitCheck.style.backgroundColor = 'rgb(35, 35, 35)'
+            }
             riscado = true
         }
     }
