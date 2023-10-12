@@ -86,7 +86,8 @@ section.postit {
 }
 .novastarefas {
     font-size: 1.3em;
-    border: none;
+    width: 85%;
+  /*   border: none; */
     background-color: #ffffff00;
     margin: 10px auto;
     color:rgb(124, 124, 124);
@@ -95,32 +96,35 @@ section.postit {
 
 button#del {
     font-size: 1.3em;
+    margin: 5px;
     background-color: rgba(214, 32, 71, 0);
     color: #ffffff;
     border-radius: 5px;
     border: none;
-    width: 50px;
-    padding: 10px;
+    width: 35px;
+    padding: 5px;
 }
 
 button#check {
     font-size: 1.5em;
+    margin: 5px;
     background-color: rgb(12, 186, 52, 0);
     color: #ffffff;
     border-radius: 5px;
     border: none;
-    width: 45px;
+    width: 35px;
     padding: 5px;
 
 }
 
 button#sal {
     font-size: 1.3em;
+    margin: 5px;
     background-color: rgb(12, 186, 52, 0);
     color: rgb(12, 163, 90);
     border-radius: 5px;
     border: none;
-    width: 45px;
+    width: 35px;
     padding: 5px;
     
 }
