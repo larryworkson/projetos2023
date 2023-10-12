@@ -4,15 +4,24 @@
     <style>
       .cls-1 {
         fill: url(#linear-gradient);
+      }
+
+      .cls-1, .cls-2 {
         stroke-width: 0px;
       }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
     </style>
-    <linearGradient id="linear-gradient" x1="91.64" y1="161.74" x2="132.13" y2="264.56" gradientTransform="translate(116.8 -181.98) rotate(45)" gradientUnits="userSpaceOnUse">
+    <linearGradient id="linear-gradient" x1="15.55" y1="50" x2="84.45" y2="50" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#b0d67a"/>
       <stop offset=".28" stop-color="#98d172"/>
       <stop offset=".88" stop-color="#5dc75f"/>
       <stop offset="1" stop-color="#50c55b"/>
     </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="74.6" y1="-4.75" x2="26.97" y2="104.75" xlink:href="#linear-gradient"/>
   </defs>
-  <path class="cls-1" d="m63.54,57.12l-27.66,27.66-7.47-7.47h0L2.03,50.94l7-7,26.38,26.38L90.5,15.22l7.47,7.47-27.43,27.43"/>
+  <polygon class="cls-1" points="76.7 24.24 40.38 60.56 22.99 43.17 15.55 50.62 40.69 75.76 84.45 32 76.7 24.24"/>
+  <path class="cls-2" d="m86.16,14.63v70.74H15.41V14.63h70.74m10-10H5.41v90.74h90.74V4.63h0Z"/>
 </svg>
