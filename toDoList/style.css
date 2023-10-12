@@ -117,7 +117,8 @@ button.check {
 
 }
 
-button#sal {
+button.sal {
+    display: none;
     font-size: 1.3em;
     margin: 5px;
     background-color: rgb(12, 186, 52, 0);

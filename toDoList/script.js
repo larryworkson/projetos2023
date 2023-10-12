@@ -25,14 +25,15 @@
             let linha = document.createElement('article')
             linha.innerHTML = `
             <section class="postit"> 
-                <input class="novastarefas" type="text" id="tarefa${item}" value="${lista[item].task}">                                  
-                <button id="sal" onclick="editar(${item})"><img src="img/save.svg"></button>
+                <input class="novastarefas" type="text" id="tarefa${item}" oninput="showSave(${item})" value="${lista[item].task}">                                  
+                <button id="sal${item}" class="sal" onclick="editar(${item})"><img src="img/save.svg"></button>
                 <button id="check" class="check" onclick="check(${item})"><img src="img/check.svg"></button>
                 <button id="del" onclick="del(${item})"><img src="img/x.svg"></button>
             </section>`
             div.appendChild(linha)
         
         }
+        //verifica se o darkmode está ativo
         if (estilo) {
             lightmode()
         } else {
@@ -58,6 +59,12 @@
             selecTarefa.style.textDecoration = 'none'
             riscado = true
         }
+    }
+
+    function showSave(p) {
+        let btnsal = document.getElementById(`sal${p}`)
+        btnsal.style.display = 'inline'
+
     }
 
 
