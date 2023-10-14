@@ -44,24 +44,46 @@ function mostrar() {
             <button id="sal${item}" class="sal" onclick="editar(${item})"><img src="img/save.svg"></button>
             <button id="check" class="check" onclick="check(${item})"><img id="imgcheck${item}" src="img/check-blank.svg"></button>
             <button id="del" onclick="del(${item})"><img src="img/x.svg"></button>
-        </section>`   
+        </section>`
+        
         div.appendChild(linha)
-        /* preciso ativar a função check(), porém sem mudar o item marcado do dicionário */
-     
-    }
+ /*        if (estilo) {
+            lightmode()
+        } else {
+            darkmode()
+        } */
+        let selecTarefa = document.getElementById(`tarefa${item}`)
+        let imgcheck = document.getElementById(`imgcheck${item}`)
+        let postitCheck = document.getElementById(`postit${item}`)
+        if (lista[item].marcado == true) {
+            selecTarefa.style.textDecoration = 'line-through'
+            imgcheck.src = 'img/check.svg'
+            //chenado se darkmode está ativo
+            if (estilo) {
+                postitCheck.style.backgroundColor = 'rgb(234, 255, 234)'
+            } else {
+                postitCheck.style.backgroundColor = 'rgb(25, 65, 25)'
+            }
+        } else if (lista[item].marcado == false) {    
+            selecTarefa.style.textDecoration = 'none'
+            imgcheck.src = 'img/check-blank.svg'
+            //chenado se darkmode está ativo
+            if (estilo) {
+                postitCheck.style.backgroundColor = 'rgb(254, 254, 254)'
+            } else {
+                postitCheck.style.backgroundColor = 'rgb(35, 35, 35)'
+            }
+            
+        }    
 
-   
     //verifica se o darkmode está ativo
-    if (estilo) {
-        lightmode()
-    } else {
-        darkmode()
-    }
-    showListagem()
+    
+    showListagem() //console log
+}
 }
 
-
 /* MARCANDO A TAREFA CONCLUIDA */
+/* muda a formatação e o objeto 'marcado' */
 function check(valor) {
     let selecTarefa = document.getElementById(`tarefa${valor}`)
     let imgcheck = document.getElementById(`imgcheck${valor}`)
@@ -89,7 +111,7 @@ function check(valor) {
         }
         
     }
-}
+} 
 
 
 
