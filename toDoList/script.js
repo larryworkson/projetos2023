@@ -8,8 +8,7 @@ var lista = []
         document.querySelector('input#tarefa').value = ''
         descTarefas.task = tarefa
         lista.push(descTarefas)
-        mostrar()
-        
+        mostrar()        
     }
 
 //função para editar um item da lista
@@ -29,7 +28,6 @@ function editar(id) {
 function showSave(p) {
     let btnsal = document.getElementById(`sal${p}`)
     btnsal.style.display = 'inline'
-
 }
 
 //função para mostrar a lista completa
@@ -44,78 +42,23 @@ function mostrar() {
             <button id="sal${item}" class="sal" onclick="editar(${item})"><img src="img/save.svg"></button>
             <button id="check" class="check" onclick="check(${item})"><img id="imgcheck${item}" src="img/check-blank.svg"></button>
             <button id="del" onclick="del(${item})"><img src="img/x.svg"></button>
-        </section>`
-        
+        </section>`        
         div.appendChild(linha)
- /*        if (estilo) {
-            lightmode()
-        } else {
-            darkmode()
-        } */
-        let selecTarefa = document.getElementById(`tarefa${item}`)
-        let imgcheck = document.getElementById(`imgcheck${item}`)
-        let postitCheck = document.getElementById(`postit${item}`)
-        if (lista[item].marcado == true) {
-            selecTarefa.style.textDecoration = 'line-through'
-            imgcheck.src = 'img/check.svg'
-            //chenado se darkmode está ativo
-            if (estilo) {
-                postitCheck.style.backgroundColor = 'rgb(234, 255, 234)'
-            } else {
-                postitCheck.style.backgroundColor = 'rgb(25, 65, 25)'
-            }
-        } else if (lista[item].marcado == false) {    
-            selecTarefa.style.textDecoration = 'none'
-            imgcheck.src = 'img/check-blank.svg'
-            //chenado se darkmode está ativo
-            if (estilo) {
-                postitCheck.style.backgroundColor = 'rgb(254, 254, 254)'
-            } else {
-                postitCheck.style.backgroundColor = 'rgb(35, 35, 35)'
-            }
-            
-        }    
-
-    //verifica se o darkmode está ativo
-    
-    showListagem() //console log
-}
+        tarefaMarcada(item)
+    }
 }
 
 /* MARCANDO A TAREFA CONCLUIDA */
 /* muda a formatação e o objeto 'marcado' */
 function check(valor) {
-    let selecTarefa = document.getElementById(`tarefa${valor}`)
-    let imgcheck = document.getElementById(`imgcheck${valor}`)
-    let postitCheck = document.getElementById(`postit${valor}`)
     if (lista[valor].marcado == false) {
-        selecTarefa.style.textDecoration = 'line-through'
-        imgcheck.src = 'img/check.svg'
-        //chenado se darkmode está ativo
-        if (estilo) {
-            postitCheck.style.backgroundColor = 'rgb(234, 255, 234)'
-        } else {
-            postitCheck.style.backgroundColor = 'rgb(25, 65, 25)'
-        }
         lista[valor].marcado = true
-
-    } else if (lista[valor].marcado == true) {    
-        selecTarefa.style.textDecoration = 'none'
-        imgcheck.src = 'img/check-blank.svg'
+        tarefaMarcada(valor)
+    } else {
         lista[valor].marcado = false
-        //chenado se darkmode está ativo
-        if (estilo) {
-            postitCheck.style.backgroundColor = 'rgb(254, 254, 254)'
-        } else {
-            postitCheck.style.backgroundColor = 'rgb(35, 35, 35)'
-        }
-        
+        tarefaMarcada(valor)
     }
 } 
-
-
-
-
 
 /* CONFIGURAÇÃO DARKMODE */
 var estilo = true
@@ -138,6 +81,10 @@ function darkmode(){
     for (let c = 0 ; c < txtpostit.length ; c++){
         txtpostit[c].style.color = 'rgb(220, 220, 220)'
     }
+    // formata os itens da lista marcados
+    for (let pu in lista) {
+        tarefaMarcada(pu)
+    }
     
 }
 function lightmode() {
@@ -153,12 +100,35 @@ function lightmode() {
     for (let c = 0 ; c < txtpostit.length ; c++){
         txtpostit[c].style.color = 'rgb(124, 124, 124)'
     }
+    // formata os itens da lista marcados
+    for (let u in lista) {
+        tarefaMarcada(u)
+    }
 }
 
-
-function showListagem(){
-    for (let j of lista){
-        console.log(j)
-    }
+function tarefaMarcada(param) {
+    let selecTarefa = document.getElementById(`tarefa${param}`)
+    let imgcheck = document.getElementById(`imgcheck${param}`)
+    let postitCheck = document.getElementById(`postit${param}`)
+    if (lista[param].marcado == true) {
+        selecTarefa.style.textDecoration = 'line-through'
+        imgcheck.src = 'img/check.svg'
+        //chenado se darkmode está ativo
+        if (estilo) {
+            postitCheck.style.backgroundColor = 'rgb(234, 255, 234)'
+        } else {
+            postitCheck.style.backgroundColor = 'rgb(25, 65, 25)'
+        }
+    } else {    
+        selecTarefa.style.textDecoration = 'none'
+        imgcheck.src = 'img/check-blank.svg'
+        //chenado se darkmode está ativo
+        if (estilo) {
+            postitCheck.style.backgroundColor = 'rgb(254, 254, 254)'
+        } else {
+            postitCheck.style.backgroundColor = 'rgb(35, 35, 35)'
+        }
+        
+    } 
 }
 
