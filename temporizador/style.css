@@ -1,0 +1,43 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+* {
+    padding: 0px;
+    margin: 0px;
+}
+html, body {
+    background-color: black;
+    color: gray;
+}
+input {
+    display: block;
+    font-family: 'Orbitron';
+    background-color: #ffffff00;
+    color: #ffffff;
+    width: 70%;
+    margin: 15px auto;
+    border: none;
+    border-bottom: 1px solid rgb(0, 60, 255);
+    font-size: 1.5em;
+    text-align: center;
+}
+button {
+    display: block;
+    font-family: 'Orbitron','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 70%;
+    border: none;
+    margin: 10px auto;
+    background-color: blue;
+    box-shadow: 1px 1px 20px blue;
+    color: #ffffff;
+    padding: 15px;
+}
+h1#iseg {
+    font-family: 'Orbitron';
+    text-align: center;
+    font-size: 50vw;
+}
+h2#imil {
+    font-family: 'Orbitron';
+    text-align: center;
+    font-size: 10vw;
+}
