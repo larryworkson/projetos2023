@@ -1,30 +1,44 @@
+"use strict"
 
+var run = true
 function start(){
-    var tempo = document.getElementById('crono').value
+    run = true
+    let tempo = document.getElementById('crono').value
     cronoSeg(tempo)
     cronoMile(tempo * 10)
+}
+
+function stop(){
+    run = false
 }
 
 function cronoSeg(fim){
     let seg = document.querySelector('h1#iseg')
     let inicio = 1
-    let intervalo = setInterval(function(){
+    let intervaloSeg = setInterval(function(){        
+        if (run == false){
+            clearInterval(intervaloSeg)
+        }
+        else if (inicio == fim){
+            clearInterval(intervaloSeg)
+        }
+        
         seg.innerText = inicio
         inicio++
-        if (inicio == fim){
-            clearInterval(intervalo)
-        }
     }, 1000)
 }
 
 function cronoMile(fim){
     let mil = document.querySelector('h2#imil')
     let inicio = 0
-    let intervalId = setInterval(function(){
+    let intervaloMil = setInterval(function(){        
+        if (inicio == fim){
+            clearInterval(intervaloMil)
+        }
+        else if (run == false) {
+            clearInterval(intervaloMil)
+        }
         mil.innerText = inicio
         inicio++
-        if (inicio == fim + 1){
-            clearInterval(intervalId)
-        }
     }, 100)
 }

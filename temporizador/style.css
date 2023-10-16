@@ -23,6 +23,7 @@ input {
 button {
     display: block;
     font-family: 'Orbitron','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5em;
     width: 70%;
     border: none;
     margin: 10px auto;
@@ -30,6 +31,10 @@ button {
     box-shadow: 1px 1px 20px blue;
     color: #ffffff;
     padding: 15px;
+}
+button#stop {
+    background-color: rgb(197, 69, 0);
+    box-shadow: 1px 1px 20px rgb(197, 69, 0);
 }
 h1#iseg {
     font-family: 'Orbitron';
@@ -40,4 +45,10 @@ h2#imil {
     font-family: 'Orbitron';
     text-align: center;
     font-size: 10vw;
+}
+
+nav {
+    width: 0%;
+    background-color: rgb(255, 132, 0);
+    height: 8px;
 }
