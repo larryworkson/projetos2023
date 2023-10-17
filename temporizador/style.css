@@ -36,6 +36,12 @@ button#stop {
     background-color: rgb(197, 69, 0);
     box-shadow: 1px 1px 20px rgb(197, 69, 0);
 }
+
+button#zerar {
+    background-color: rgb(100, 100, 100);
+    box-shadow: 'none';
+
+}
 h1#iseg {
     font-family: 'Orbitron';
     text-align: center;

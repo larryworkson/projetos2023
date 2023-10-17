@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temporizador</title>
+    <title>Cronometro</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imgs/crono.png" type="image/png">
 </head>
 <body>
     <nav id="barra">
@@ -13,17 +14,16 @@
         <h1 id="iseg">0</h1>
         <h2 id="imil">0</h2>
         <input type="number" id="crono" placeholder="Tempo" autocomplete="off">
-        <button onclick="start()" name="btniniciar">INICIAR</button>
-        <button id="stop" onclick="stop()">PARAR</button>
+        <div id="btniniciar"><button onclick="start()" >INICIAR</button>
+        </div>
+        <button id="zerar" onclick="zerar()">ZERAR</button>
+        
 
     </section>
     <script src="scripts.js"></script>
 </body>
 </html>
-<!-- usar o mesmo botão para iniciar e parar -->
-<!-- adicionar os números a uma lista, a cada dígito adicionado, adicionar um item na lista infinitamente -->
-<!-- o temporizador não está indo até o final, faltando 1 número.  -->
-<!-- criar uma barra de progresso que tem o tamanho preenchido conforme vai chegando ao fim do crono -->
+<!-- adicionar os números a uma lista, a cada dígito adicionado, adicionar um item na lista infinitamente OU dá para criar um número que vai sendo agregado quando o fim chega a 60seg-->
 <!-- deixar o número piscando quando estiver em pause -->
 <!-- adicionar opção de PAUSE -->
 <!-- Adicionar opção contagem regressiva -->
