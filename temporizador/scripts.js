@@ -68,3 +68,26 @@ function cronoMile(fim){
         
     }, 100)
 }
+
+let crono = {hr: 0, min: 0, seg: 0}
+function cronoStart() {
+    
+    /* a cada segundo um número é adicionado na lista crono */
+    let final = document.getElementById('crono').value
+    let show = document.getElementById('cronolista')
+    let inicio = 0
+    let parada = setInterval(function(){
+        
+        if (inicio == final){
+            clearInterval(parada)
+        }
+        else if (run == false) {
+            clearInterval(parada)
+        }
+        crono.seg = inicio
+        inicio++
+    }, 1000)
+    show.innerText = `00:00:${inicio}`
+
+
+}
