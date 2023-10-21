@@ -1,0 +1,43 @@
+<!-- 5Qs
+1Q: quais são os dados de entrada necessários
+2Q: o que devo fazer com estes dados?
+3Q: Quais são as restrições deste problema?
+4Q: qual o resultado esperado?
+5Q: Qual a sequência de passos para chegar no resultado esperado? 
+-----------------------------------------------------------------
+1Q: Clique do usuário para iniciar a contagem.
+2Q: Somar um número a contagem (iniciada em 0) até que o usuário a interrompa.
+3Q: Existe um limite máximo de tempo?
+4Q: o sistema deve apresentar a contagem atualizada a cada 1 segundo. Além disso, o usuário deve ter a opção de PAUSAR a contagem e ZERAR a contagem.
+5Q: 
+1: Apresentar as opções INICIAR, PAUSAR e ZERAR para o usuário.
+    1.1: Se o usuário clicar em INICIAR, a contagem deve ser iniciada.
+        1.1.1: um objeto deve receber as propriedades HR(hora), MIN(minutos) e SEG(segundos). Todos com valor 0.
+        1.1.2: a propriedade SEG deve ser incrementada com +1 a cada segundo até que chegue ao valor 60.
+        1.1.3: ao atingir o valor 60, a propriedade SEG deve receber novamente o valor 0.
+        1.1.4: toda vez que a propriedade SEG for igual a 60, a propriedade MIN deve ser incrementada com +1.
+        1.1.5: quando a propriedade MIN atingir o valor 60, ela deve receber novamente o valor 0.
+        1.1.6: toda vez que a propriedade MIN for igual a 60, a propriedade HR deve ser incrementada com +1.
+    1.2: Se usuário clicar em PAUSAR, a contagem deverá ser interrompida (congelada).
+    1.3: Se o usuário clicar em ZERAR, todos os valores das propriedades do objeto devem ser zeradas.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronometro</title>
+    <link rel="icon" href="imgs/crono.png">
+</head>
+<body>
+    <main>
+        <h1 id="crono"></h1>
+        <p id="btniniciar" >
+            <button onclick="startCrono()">START</button>
+        </p>
+        <button onclick="zerarCrono()">ZERAR</button>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
