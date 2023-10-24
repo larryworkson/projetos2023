@@ -1,6 +1,6 @@
 "use strict"
 //define o objeto que recebe o cronometro. Note que ele é uma var, portanto está em um escopo global para ser utilizado por qualquer função.
-var crono = {hr: 3, min: 12, seg: 55}
+var crono = {hr: 0, min: 0, seg: 55, mil: 0}
 
 //esta variável é utilizada para verificar se o cronometro está ativo.
 var rodando = false
@@ -12,13 +12,17 @@ var mostraCrono = document.getElementById('crono')
 function startCrono(){
     rodando = true
     mudarBtn()
-    let intervalo = setInterval(function(){
-        if (rodando == false) { //verifica se o cronometro foi pausado para interromper a contagem
-            clearInterval(intervalo)
+    //está função interna do JS cria um intervalo de tempo para rodar o que está neste bloco.
+    let intervaloMilesimo = setInterval(function() {
+        if (rodando == false){ //verifica se o cronometro foi pausado para interromper a contagem
+            clearInterval(intervaloMilesimo)
             stopCrono()
-
         }
-        //está função interna do JS cria um intervalo de tempo para rodar o que está neste bloco.
+        
+        if (crono.mil == 10) {
+            crono.mil = 0
+            crono.seg++
+        }
         if (crono.seg == 60) { //ao atingir 60 segundos, acrescenta 1 min.
             crono.seg = 0
             crono.min++
@@ -29,9 +33,9 @@ function startCrono(){
             crono.hr++
         }
         //mostra a lista atualizada no html. Usei as funções toString e padStart para formatar os valores menores que 10 com um zero à esquerda.
-        mostraCrono.innerText = `${crono.hr.toString().padStart(2, '0')}:${crono.min.toString().padStart(2, '0')}:${crono.seg.toString().padStart(2, '0')}`
-        crono.seg++ //o cronometro só avança com o incremente de segundos.
-    }, 1000)
+        mostraCrono.innerText = `${crono.hr.toString().padStart(2, '0')}:${crono.min.toString().padStart(2, '0')}:${crono.seg.toString().padStart(2, '0')}:${crono.mil.toString().padStart(2, '0')}`
+        crono.mil++
+    }, 100)
 
 }
 
