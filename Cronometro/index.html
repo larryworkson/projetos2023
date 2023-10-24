@@ -28,6 +28,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cronometro</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="imgs/crono.png">
 </head>
 <body>
@@ -36,7 +37,10 @@
         <p id="btniniciar" >
             <button onclick="startCrono()">START</button>
         </p>
-        <button onclick="zerarCrono()">ZERAR</button>
+        <p id="btnzerar">
+            <button id="zerar" onclick="zerarCrono()">ZERAR</button>
+        </p>
+        
     </main>
     <script src="scripts.js"></script>
 </body>

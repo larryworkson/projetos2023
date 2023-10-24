@@ -1,6 +1,6 @@
 "use strict"
 //define o objeto que recebe o cronometro. Note que ele é uma var, portanto está em um escopo global para ser utilizado por qualquer função.
-var crono = {hr: 0, min: 0, seg: 55, mil: 0}
+var crono = {hr: 0, min: 0, seg: 0, mil: 0}
 
 //esta variável é utilizada para verificar se o cronometro está ativo.
 var rodando = false
@@ -32,8 +32,9 @@ function startCrono(){
             crono.min++
             crono.hr++
         }
-        //mostra a lista atualizada no html. Usei as funções toString e padStart para formatar os valores menores que 10 com um zero à esquerda.
+        //mostra a lista atualizada no html. Usei as funções toString e padStart para formatar os valores menores que 10 com um zero à esquerda.        
         mostraCrono.innerText = `${crono.hr.toString().padStart(2, '0')}:${crono.min.toString().padStart(2, '0')}:${crono.seg.toString().padStart(2, '0')}:${crono.mil.toString().padStart(2, '0')}`
+                                 
         crono.mil++
     }, 100)
 
@@ -43,7 +44,7 @@ function startCrono(){
 function mudarBtn(){
     //esta função muda o botão INICIAR pelo PAUSAR, evitando que o usuário clique novamente no botão iniciar.
     let btnStart = document.getElementById('btniniciar')
-    btnStart.innerHTML = '<button onclick="stopCrono()">PAUSAR</button>'
+    btnStart.innerHTML = '<button id="pausar" onclick="stopCrono()">PAUSAR</button>'
 }
 function stopCrono(){
     //esta função pausa a contagem e troca o botão PAUSAR pelo INICIAR
