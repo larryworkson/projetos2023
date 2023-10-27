@@ -1,0 +1,45 @@
+<!-- 5Qs
+1Q: quais são os dados de entrada necessários
+2Q: o que devo fazer com estes dados?
+3Q: Quais são as restrições deste problema?
+4Q: qual o resultado esperado?
+5Q: Qual a sequência de passos para chegar no resultado esperado? 
+-----------------------------------------------------------------
+1Q: catalogo de produtos (preço, imagem, nome, quantidade)
+2Q: apresentar os produtos ao usuário e armazenar os produtos selecionados em um carrinho de compras
+3Q: usuário pode desistir de um produto. Ou desejar mais de 1 unidade do produto.
+4Q: espera-se que a página mostre a lista de todos os produtos com botão de comprar. E ao cliar em comprar, o usuário irá para página do produto e lá deve escolher a quantidade do produto. Ao clicar em comprar deve ser adicionado no carrinho. O usuário poderá consultar o carrinho quando quiser e remover produtos dele.
+5Q:
+    1.0.0 criar uma lista de produtos e nesta lista adicionar objetos com as propriedades nome, preço, imagem (url) e quantidade.
+    2.0.0 criar uma página com a lista de produtos apresentando imagem, nome, preço e o link para a página específica de cada produto que terá todos as propriedades.
+        2.1.0 vincular todos os itens desta lista com a lista no javascript.
+    3.0.0 criar funções manipular a lista 'carrinho'
+        3.1.0 criar função para adicionar um item
+        3.2.0 criar função para remover um item
+        3.3.0 criar função para alterar a quantidade do item.
+        3.4.0 criar função para somar todos os itens do carrinho e apresentar o total da compra.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lojinha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="criaProduto()">
+    <main>
+        <nav>
+            <p>Carrinho</p>
+            <p id="itenscar">0</p>
+        </nav>
+        <section id="listaprodutos">
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- criar página do produto automaticamente.
+Criar função no botão que aponte qual produto será apresentado na página -->
